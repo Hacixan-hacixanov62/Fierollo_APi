@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fierolla_Api", "Fierolla_Api\Fierolla_Api.csproj", "{5DEF18DF-C8E9-4664-BDDD-C8308BAAE035}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DEF18DF-C8E9-4664-BDDD-C8308BAAE035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DEF18DF-C8E9-4664-BDDD-C8308BAAE035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DEF18DF-C8E9-4664-BDDD-C8308BAAE035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DEF18DF-C8E9-4664-BDDD-C8308BAAE035}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28AA2B18-DAB2-4017-BCDC-619786CE4153}
+	EndGlobalSection
+EndGlobal

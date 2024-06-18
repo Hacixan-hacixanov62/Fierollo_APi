@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Fierolla_Api.props" />
+</Project>
