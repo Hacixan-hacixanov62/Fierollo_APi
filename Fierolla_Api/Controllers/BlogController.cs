@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Fierolla_Api.Data;
-using Fierolla_Api.DTOs.Ctegories;
+using Fierolla_Api.DTOs.Blogs;
 using Fierolla_Api.DTOs.Products;
 using Fierolla_Api.Models;
 using Microsoft.AspNetCore.Http;
@@ -9,33 +9,33 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Fierolla_Api.Controllers
 {
-    public class ProductController : BaseController
+    public class BlogController : BaseController
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
-        public ProductController(AppDbContext context,
-                                  IMapper mapper)
+
+        public BlogController(AppDbContext context,
+                              IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
             
         }
 
-
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(_mapper.Map<List<ProductDTo>>(await _context.Products.AsNoTracking().ToListAsync()));
+            return Ok(_mapper.Map<List<BlogDTo>>(await _context.Blogs.AsNoTracking().ToListAsync()));
 
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] ProductCreateDTo request)
+        public async Task<IActionResult> Create([FromForm] BlogCreateDTo request)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            await _context.Products.AddAsync(_mapper.Map<Product>(request));
+            await _context.Blogs.AddAsync(_mapper.Map<Blog>(request));
             // await _context.Categories.AddAsync(new Category { Name = request.Name });
 
             await _context.SaveChangesAsync();
@@ -47,15 +47,15 @@ namespace Fierolla_Api.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> Edit(int id, [FromBody] ProductEditDTo request)
+        public async Task<IActionResult> Edit(int id, [FromBody] BlogEditDTo request)
         {
-            var entity = await _context.Products.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id);
+            var entity = await _context.Blogs.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id);
 
             if (entity == null) return NotFound();
 
             _mapper.Map(request, entity);
 
-            _context.Products.Update(entity);
+            _context.Blogs.Update(entity);
 
             await _context.SaveChangesAsync();
 
@@ -67,11 +67,11 @@ namespace Fierolla_Api.Controllers
 
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var entity = await _context.Products.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id);
+            var entity = await _context.Blogs.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id);
 
             if (entity == null) return NotFound();
 
-            return Ok(_mapper.Map<ProductDTo>(entity));
+            return Ok(_mapper.Map<BlogDTo>(entity));
 
 
         }
@@ -81,7 +81,7 @@ namespace Fierolla_Api.Controllers
         {
             if (id == null) return BadRequest();
 
-            var entity = await _context.Products.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id);
+            var entity = await _context.Blogs.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id);
 
             if (entity == null) return NotFound();
 

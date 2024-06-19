@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fierolla_Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+868d7872982b6d938f7239b4353f2d1135cf4ec6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fierolla_Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fierolla_Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
